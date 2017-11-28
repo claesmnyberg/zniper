@@ -1,0 +1,195 @@
+.\"
+.\"  zniper.1 - zniper manual
+.\"  
+.\"  Copyright (c) 2003 Claes M. Nyberg <pocpon@fuzzpoint.com>
+.\"  All rights reserved, all wrongs reversed.
+.\"      
+.\"  Redistribution and use in source and binary forms, with or without
+.\"  modification, are permitted provided that the following conditions
+.\"  are met:
+.\"
+.\"  1. Redistributions of source code must retain the above copyright
+.\"     notice, this list of conditions and the following disclaimer.
+.\"  2. Redistributions in binary form must reproduce the above copyright
+.\"     notice, this list of conditions and the following disclaimer in the
+.\"     documentation and/or other materials provided with the distribution.
+.\"  3. The name of author may not be used to endorse or promote products
+.\"     derived from this software without specific prior written permission.
+.\"      
+.\"  THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+.\"  INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+.\"  AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+.\"  THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+.\"  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+.\"  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+.\"  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+.\"  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+.\"  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+.\"  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"     
+.\" $Id: zniper.1,v 1.2 2004-09-08 07:55:32 cmn Exp $
+.\"
+
+.TH ZNIPER 1 "Jan 2004" "zniper version 1.0" " "
+.SH NAME
+.B zniper
+\- Display and reset TCP connections
+
+.SH SYNOPSIS
+.B zniper
+.RB [ -hnpsvV ]
+.RB [ -b 
+.IB color ]
+.RB [ -B    
+.IB color ]
+.RB [ -f      
+.IB color ]
+.RB [ -i
+.IB iface ]
+.RB [ -l
+.IB file ]
+
+.SH DESCRIPTION
+.B zniper
+displays TCP connections seen by the first available interface, or the one specified 
+with 
+.B -i
+option. The connections displayed can be reseted by injecting RST packets into the
+stream. Connections initiated before 
+.B zniper
+was started is also detected (unless
+.B -s
+option is used on the command line), these are displayed marked as 'Old' since the client
+sending the initial SYN packet is not known.
+ 
+.PP
+.SH COMMANDLINE OPTIONS
+
+.BI  "-b " color
+.RS 4
+Background color, defaults to black.
+.RE
+
+.BI  "-B " color
+.RS 4
+Border color, defaults to green.
+.RE
+
+.BI  "-f " color
+.RS 4
+Foreground color, defaults to white.
+.RE
+
+.B -h
+.RS 4
+Display short summary of commandline options.
+.RE 
+
+.BI  "-i " iface
+.RS 4
+Specify the interface to listen on.
+.RE 
+
+.BI  "-l " file
+.RS 4
+Log status information to file
+.IR file .
+A nice way of logging detected connections.
+.RE 
+
+.B -n
+.RS 4
+Do not attempt to resolve hostnames.
+.RE
+
+.B -s
+.RS 4
+Require the initial SYN packet for a connection to be displayed.
+.RE
+
+.B -V
+.RS 4
+Print version and exit.
+.RE
+
+
+.B -p
+.RS 4
+Do not put the interface in promiscous mode.
+Note that the interface might be in promiscous mode
+for some other reason, why you might receive "all" packets
+seen anyway.
+.RE 
+
+.PP
+.SH INTERACTIVE COMMANDS
+
+.B c
+.RS 4
+Decrease size of connection window.
+.RE
+
+.B C
+.RS 4
+Increase size of connection window.
+.RE
+
+.B i
+.RS 4
+Toggle display of idle connections.
+.RE
+
+.B p
+.RS 4
+Sort by source port, smallest first.
+.RE
+
+.B P
+.RS 4
+Sort by source port, descending order.
+.RE
+
+.B r
+.RS 4
+Toggle resolving of hostnames.
+.RE
+
+.B k
+.RS 4
+Attempt to kill the highlighted connection by injecting a RST packet
+in each direction. Note that holding down the key will result in an
+attempt of killing the next highlighted connection.
+.RE
+
+.B v
+.RS 4
+Decrease verbose level.
+.RE
+
+.B V
+.RS 4
+Increase verbose level.
+.RE
+
+.B x
+.RS 4
+Toggle status window visibility
+.RE
+
+.B +
+.RS 4
+Highlight the connection above the currently highlighted.
+.RE
+
+.B -
+.RS 4
+Highlight the connection below the currently highlighted.
+.RE
+
+
+.PP
+.SH AUTHOR
+Claes M. Nyberg
+.RS 0
+.IR <pocpon@fuzzpoint.com>
+.RE
