@@ -1,4 +1,4 @@
-Claes M Nyberg <pocpon@fuzzpoint.com>
+Claes M Nyberg <cmn@fuzzpoint.com>
 
 Read the manual zniper.1 (or zniper.1.txt)
 'make' to compile

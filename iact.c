@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2003 Claes M. Nyberg <pocpon@fuzzpoint.com>
+ *  Copyright (c) 2003 Claes M. Nyberg <cmn@fuzzpoint.com>
  *  All rights reserved, all wrongs reversed.
  *
  *  Redistribution and use in source and binary forms, with or without

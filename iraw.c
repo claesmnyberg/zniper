@@ -1,11 +1,11 @@
 /*
  *  File: iraw.c
- *  Author: Claes M. Nyberg <pocpon@fuzzpoint.com>
+ *  Author: Claes M. Nyberg <cmn@fuzzpoint.com>
  *  Description: Raw IPv4 packet routines
  *  Version: 1.0
  *  Date: Mon Mar 17 20:11:03 CET 2003
  *
- *  Copyright (c) 2003 Claes M. Nyberg <pocpon@fuzzpoint.com>
+ *  Copyright (c) 2003 Claes M. Nyberg <cmn@fuzzpoint.com>
  *  All rights reserved, all wrongs reversed.
  *
  *  Redistribution and use in source and binary forms, with or without

@@ -1,7 +1,7 @@
 /*
  *  zniper.c  - zniper main file
  *
- *  Copyright (c) 2002 Claes M. Nyberg <pocpon@fuzzpoint.com>
+ *  Copyright (c) 2002 Claes M. Nyberg <cmn@fuzzpoint.com>
  *  All rights reserved, all wrongs reversed.
  *
  *  Redistribution and use in source and binary forms, with or without
@@ -53,7 +53,7 @@ cleanup(void)
 void
 usage(char *pname)
 {
-	printf("\nZniper - <pocpon@fuzzpoint.com>\n");
+	printf("\nZniper - <cmn@fuzzpoint.com>\n");
 	printf("Usage: %s [Option(s)]\n", pname);
 	printf("\n Options:\n");
 	printf("  -b color   - Background color\n");
