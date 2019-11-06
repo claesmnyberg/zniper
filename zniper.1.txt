@@ -1,0 +1,90 @@
+
+ZNIPER(1)                                                                                                   ZNIPER(1)
+
+NAME
+       zniper - Display and reset TCP connections
+
+SYNOPSIS
+       zniper [-hnpsvV] [-b color] [-B color] [-f color] [-i iface] [-l file]
+
+DESCRIPTION
+       zniper  displays  TCP  connections seen by the first available interface, or the one specified with -i option.
+       The connections displayed can be reseted by injecting RST  packets  into  the  stream.  Connections  initiated
+       before zniper was started is also detected (unless -s option is used on the command line), these are displayed
+       marked as 'Old' since the client sending the initial SYN packet is not known.
+
+COMMANDLINE OPTIONS
+       -b color
+           Background color, defaults to black.
+
+       -B color
+           Border color, defaults to green.
+
+       -f color
+           Foreground color, defaults to white.
+
+       -h
+           Display short summary of commandline options.
+
+       -i iface
+           Specify the interface to listen on.
+
+       -l file
+           Log status information to file file.  A nice way of logging detected connections.
+
+       -n
+           Do not attempt to resolve hostnames.
+
+       -s
+           Require the initial SYN packet for a connection to be displayed.
+
+       -V
+           Print version and exit.
+
+       -p
+           Do not put the interface in promiscous mode.  Note that the interface might be in promiscous mode for some
+           other reason, why you might receive "all" packets seen anyway.
+
+INTERACTIVE COMMANDS
+       c
+           Decrease size of connection window.
+
+       C
+           Increase size of connection window.
+
+       i
+           Toggle display of idle connections.
+
+       p
+           Sort by source port, smallest first.
+
+       P
+           Sort by source port, descending order.
+
+       r
+           Toggle resolving of hostnames.
+
+       k
+           Attempt  to kill the highlighted connection by injecting a RST packet in each direction. Note that holding
+           down the key will result in an attempt of killing the next highlighted connection.
+
+       v
+           Decrease verbose level.
+
+       V
+           Increase verbose level.
+
+       x
+           Toggle status window visibility
+
+       +
+           Highlight the connection above the currently highlighted.
+
+       -
+           Highlight the connection below the currently highlighted.
+
+AUTHOR
+       Claes M. Nyberg
+       <cmn@fuzzpoint.com>
+
+zniper version 1.0                                     Jan 2004                                             ZNIPER(1)
